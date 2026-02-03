@@ -1,0 +1,1 @@
+{"required": true, "minVersion": "0.8", "package": "com.mindplus.optimizer.mixin", "compatibilityLevel": "JAVA_17", "mixins": ["ServerWorldMixin", "MobEntityMixin"], "client": [], "server": ["ChunkGeneratorMixin"], "injectors": {"defaultRequire": 1}}

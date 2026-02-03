@@ -1,0 +1,96 @@
+package com.mindplus.optimizer.client;
+
+import com.mindplus.optimizer.MindPlusOptimizer;
+import com.mindplus.optimizer.config.ModConfig;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
+import net.fabricmc.api.ClientModInitializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class MindPlusOptimizerClient implements ClientModInitializer {
+    private static final Logger LOGGER = LoggerFactory.getLogger("MindPlus-Optimizer-Client");
+
+    @Override
+    public void onInitializeClient() {
+        LOGGER.info("MindPlus Optimizer Client initialized");
+
+        AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
+        ModConfig.INSTANCE = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+
+        LOGGER.info("ModConfig initialized: {}", ModConfig.INSTANCE != null);
+
+        // 初始化配置管理器（包括亮度配置）
+        com.mindplus.optimizer.config.ModConfigManager.init();
+        LOGGER.info("Brightness config initialized");
+
+        // 使用客户端渲染事件来应用亮度效果
+        net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents.END.register((context) -> {
+            BrightnessConfig config = com.mindplus.optimizer.config.ModConfigManager.getBrightnessConfig();
+            if (config != null && config.enabled) {
+                // 通过反射修改游戏内的 gamma 值
+                try {
+                    Object minecraftClient = Class.forName("net.minecraft.client.MinecraftClient")
+                        .getMethod("getInstance").invoke(null);
+                    
+                    Object options = minecraftClient.getClass().getMethod("getOptions").invoke(minecraftClient);
+                    
+                    java.lang.reflect.Field gammaField = options.getClass().getDeclaredField("gamma");
+                    gammaField.setAccessible(true);
+                    
+                    Object gammaOption = gammaField.get(options);
+                    double currentGamma = (Double) gammaOption.getClass().getMethod("getValue").invoke(gammaOption);
+                    
+                    // 应用亮度倍数
+                    double newGamma = Math.min(config.maxBrightness, Math.max(config.minBrightness, currentGamma * config.brightnessMultiplier));
+                    
+                    // 只在 gamma 值需要改变时才设置
+                    if (Math.abs(newGamma - currentGamma) > 0.01) {
+                        gammaOption.getClass().getMethod("setValue", Double.class).invoke(gammaOption, newGamma);
+                    }
+                } catch (Exception e) {
+                    // 静默处理错误，避免日志刷屏
+                }
+            }
+        });
+
+        // 延迟初始化，等待游戏完全启动
+        new Thread(() -> {
+            try {
+                // 等待 5 秒，确保游戏已经完全启动
+                Thread.sleep(5000);
+
+                // 获取 MinecraftClient 实例
+                Object client = Class.forName("net.minecraft.client.MinecraftClient")
+                    .getMethod("getInstance").invoke(null);
+
+                // 初始化渲染优化器
+                if (MindPlusOptimizer.getRuntimeCoordinator() != null) {
+                    MindPlusOptimizer.getRuntimeCoordinator().setRenderOptimizerClient(client);
+                    LOGGER.info("Render optimizer initialized on client");
+                }
+            } catch (Exception e) {
+                LOGGER.warn("Failed to initialize client components", e);
+            }
+        }, "MindPlus-Initializer").start();
+    }
+
+    public static void openConfigScreen() {
+        // 使用反射获取 MinecraftClient 实例，避免类加载时的 NoClassDefFoundError
+        try {
+            Class<?> minecraftClientClass = Class.forName("net.minecraft.client.MinecraftClient");
+            Object client = minecraftClientClass.getMethod("getInstance").invoke(null);
+            Class<?> screenClass = Class.forName("net.minecraft.client.gui.screen.Screen");
+            Object currentScreen = minecraftClientClass.getMethod("getCurrentScreen").invoke(client);
+
+            // 使用反射调用 ConfigScreenProvider.getConfigScreen
+            Class<?> configScreenProviderClass = Class.forName("com.mindplus.optimizer.client.ConfigScreenProvider");
+            Object configScreen = configScreenProviderClass.getMethod("getConfigScreen", screenClass)
+                .invoke(null, currentScreen);
+
+            minecraftClientClass.getMethod("setScreen", screenClass).invoke(client, configScreen);
+        } catch (Exception e) {
+            LOGGER.error("Failed to open config screen", e);
+        }
+    }
+}
