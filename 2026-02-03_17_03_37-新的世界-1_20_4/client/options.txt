@@ -1,0 +1,33 @@
+ao: true
+biomeBlendRadius: 2
+enableVsync: true
+entityDistanceScaling: 1.0
+entityShadows: true
+forceUnicodeFont: false
+fov: 110
+fovEffectScale: 1.0
+darknessEffectScale: 1.0
+glintSpeed: 0.5
+glintStrength: 0.75
+prioritizeChunkUpdates: NONE
+fullscreen: false
+fullscreenResolution: null
+gamma: 0.5
+glDebugVerbosity: 1
+graphicsMode: fancy
+guiScale: 0
+maxFps: 260
+mipmapLevels: 4
+narrator: OFF
+overrideHeight: 0
+overrideWidth: 0
+particles: ALL
+reducedDebugInfo: false
+renderClouds: FANCY
+renderDistance: 16
+simulationDistance: 14
+resourcePacks: [vanilla, fabric]
+screenEffectScale: 1.0
+syncChunkWrites: false
+useNativeTransport: true
+soundDevice: 

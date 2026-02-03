@@ -1,0 +1,461 @@
+---- Minecraft Profiler Results ----
+// I'm working as hard as I can!
+
+Version: 1.20.4
+Time span: 10011 ms
+Tick span: 724 ticks
+// This is approximately 72.32 ticks per second. It should be 20 ticks per second
+
+--- BEGIN PROFILE DUMP ---
+
+[00] gameRenderer(724/1) - 50.43%/50.43%
+[01] |   level(724/1) - 89.79%/45.27%
+[02] |   |   terrain(724/1) - 47.49%/21.50%
+[03] |   |   |   render_RenderType[solid:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.class_4668$$Lambda/0x0000007001aa8aa0@ed90021]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], no_color_logic, line_width[1.0]], outlineProperty=affects_outline]](724/1) - 65.63%/14.11%
+[03] |   |   |   render_RenderType[cutout_mipped:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.class_4668$$Lambda/0x0000007001aa8cc0@b887f81]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], no_color_logic, line_width[1.0]], outlineProperty=affects_outline]](724/1) - 18.42%/3.96%
+[03] |   |   |   render_RenderType[cutout:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=false)], shader[Optional[net.minecraft.class_4668$$Lambda/0x0000007001aa8ee0@55e8f1aa]], no_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, main_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], no_color_logic, line_width[1.0]], outlineProperty=affects_outline]](724/1) - 14.19%/3.05%
+[03] |   |   |   unspecified(724/1) - 1.74%/0.37%
+[03] |   |   |   filterempty(2172/3) - 0.02%/0.00%
+[02] |   |   translucent(724/1) - 23.86%/10.80%
+[03] |   |   |   render_RenderType[translucent:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.class_4668$$Lambda/0x0000007001aa9100@45790fa9]], translucent_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, translucent_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], no_color_logic, line_width[1.0]], outlineProperty=affects_outline]](724/1) - 98.86%/10.68%
+[03] |   |   |   unspecified(724/1) - 1.12%/0.12%
+[03] |   |   |   filterempty(724/1) - 0.01%/0.00%
+[03] |   |   |   translucent_sort(724/1) - 0.01%/0.00%
+[02] |   |   entities(724/1) - 10.65%/4.82%
+[02] |   |   compile_sections(724/1) - 3.34%/1.51%
+[03] |   |   |   populate_sections_to_compile(724/1) - 44.34%/0.67%
+[03] |   |   |   schedule_async_compile(724/1) - 28.32%/0.43%
+[03] |   |   |   upload(724/1) - 25.92%/0.39%
+[03] |   |   |   unspecified(724/1) - 1.43%/0.02%
+[02] |   |   sky(724/1) - 2.30%/1.04%
+[02] |   |   terrain_setup(724/1) - 2.20%/1.00%
+[03] |   |   |   update(724/1) - 96.38%/0.96%
+[04] |   |   |   |   apply_frustum(83/0) - 66.16%/0.64%
+[04] |   |   |   |   section_occlusion_graph(724/1) - 32.18%/0.31%
+[04] |   |   |   |   unspecified(724/1) - 1.66%/0.02%
+[03] |   |   |   unspecified(724/1) - 2.47%/0.02%
+[03] |   |   |   culling(724/1) - 0.50%/0.01%
+[03] |   |   |   camera(724/1) - 0.42%/0.00%
+[03] |   |   |   cull(724/1) - 0.23%/0.00%
+[02] |   |   particles(724/1) - 1.66%/0.75%
+[02] |   |   blockentities(724/1) - 1.58%/0.72%
+[02] |   |   string(724/1) - 1.44%/0.65%
+[03] |   |   |   render_RenderType[tripwire:CompositeState[[texture[Optional[minecraft:textures/atlas/blocks.png](blur=false, mipmap=true)], shader[Optional[net.minecraft.class_4668$$Lambda/0x0000007001aadfa0@3e7d72f]], translucent_transparency, depth_test[<=], cull[true], lightmap[true], overlay[false], no_layering, weather_target, default_texturing, write_mask_state[writeColor=true, writeDepth=true], no_color_logic, line_width[1.0]], outlineProperty=affects_outline]](724/1) - 85.88%/0.56%
+[03] |   |   |   unspecified(724/1) - 13.96%/0.09%
+[03] |   |   |   filterempty(724/1) - 0.16%/0.00%
+[02] |   |   light_updates(724/1) - 1.18%/0.53%
+[02] |   |   hand(724/1) - 0.91%/0.41%
+[02] |   |   clear(724/1) - 0.75%/0.34%
+[02] |   |   unspecified(724/1) - 0.56%/0.25%
+[02] |   |   destroyProgress(724/1) - 0.51%/0.23%
+[02] |   |   light_update_queue(724/1) - 0.38%/0.17%
+[02] |   |   clouds(724/1) - 0.38%/0.17%
+[02] |   |   camera(724/1) - 0.29%/0.13%
+[02] |   |   pick(724/1) - 0.24%/0.11%
+[03] |   |   |   #getEntities 724/1
+[02] |   |   lightTex(201/0) - 0.16%/0.07%
+[02] |   |   weather(724/1) - 0.07%/0.03%
+[02] |   |   fog(724/1) - 0.03%/0.01%
+[02] |   |   culling(724/1) - 0.01%/0.00%
+[02] |   |   center(724/1) - 0.01%/0.00%
+[02] |   |   captureFrustum(724/1) - 0.01%/0.00%
+[01] |   gui(724/1) - 10.10%/5.09%
+[02] |   |   chat(724/1) - 91.64%/4.67%
+[02] |   |   unspecified(724/1) - 8.26%/0.42%
+[02] |   |   bossHealth(724/1) - 0.07%/0.00%
+[02] |   |   selectedItemName(724/1) - 0.03%/0.00%
+[01] |   unspecified(724/1) - 0.09%/0.04%
+[01] |   toasts(724/1) - 0.03%/0.02%
+[00] updateDisplay(724/1) - 38.88%/38.88%
+[01] |   unspecified(724/1) - 99.98%/38.88%
+[01] |   mouse(301/0) - 0.02%/0.01%
+[00] tick(724/1) - 5.11%/5.11%
+[01] |   #clientTick 210/0
+[01] |   level(210/0) - 68.45%/3.50%
+[02] |   |   entities(210/0) - 94.86%/3.32%
+[03] |   |   |   minecraft:skeleton(4620/6) - 10.53%/0.35%
+[04] |   |   |   |   unspecified(4620/6) - 45.63%/0.16%
+[04] |   |   |   |   entityBaseTick(4620/6) - 14.62%/0.05%
+[04] |   |   |   |   push(4620/6) - 13.35%/0.05%
+[05] |   |   |   |   |   #getEntities 4620/6
+[04] |   |   |   |   livingEntityBaseTick(4620/6) - 6.72%/0.02%
+[04] |   |   |   |   freezing(4620/6) - 6.60%/0.02%
+[04] |   |   |   |   travel(4620/6) - 3.11%/0.01%
+[04] |   |   |   |   headTurn(4620/6) - 2.36%/0.01%
+[04] |   |   |   |   mobBaseTick(4620/6) - 1.98%/0.01%
+[04] |   |   |   |   ai(4620/6) - 1.83%/0.01%
+[04] |   |   |   |   rangeChecks(4620/6) - 1.27%/0.00%
+[04] |   |   |   |   jump(4620/6) - 1.27%/0.00%
+[04] |   |   |   |   looting(4620/6) - 1.25%/0.00%
+[03] |   |   |   minecraft:salmon(4620/6) - 10.11%/0.34%
+[04] |   |   |   |   unspecified(4620/6) - 44.23%/0.15%
+[04] |   |   |   |   entityBaseTick(4620/6) - 17.81%/0.06%
+[04] |   |   |   |   push(4620/6) - 13.31%/0.04%
+[05] |   |   |   |   |   #getEntities 4620/6
+[04] |   |   |   |   livingEntityBaseTick(4620/6) - 6.01%/0.02%
+[04] |   |   |   |   freezing(4620/6) - 5.01%/0.02%
+[04] |   |   |   |   travel(4620/6) - 3.75%/0.01%
+[04] |   |   |   |   headTurn(4620/6) - 2.31%/0.01%
+[04] |   |   |   |   mobBaseTick(4620/6) - 1.85%/0.01%
+[04] |   |   |   |   ai(4620/6) - 1.85%/0.01%
+[04] |   |   |   |   jump(4620/6) - 1.34%/0.00%
+[04] |   |   |   |   looting(4620/6) - 1.28%/0.00%
+[04] |   |   |   |   rangeChecks(4620/6) - 1.25%/0.00%
+[03] |   |   |   minecraft:creeper(4111/6) - 9.32%/0.31%
+[04] |   |   |   |   unspecified(4111/6) - 48.70%/0.15%
+[04] |   |   |   |   entityBaseTick(4111/6) - 13.95%/0.04%
+[04] |   |   |   |   push(4111/6) - 12.49%/0.04%
+[05] |   |   |   |   |   #getEntities 4111/5
+[04] |   |   |   |   freezing(4111/6) - 7.11%/0.02%
+[04] |   |   |   |   livingEntityBaseTick(4111/6) - 5.46%/0.02%
+[04] |   |   |   |   travel(4111/6) - 2.97%/0.01%
+[04] |   |   |   |   headTurn(4111/6) - 2.11%/0.01%
+[04] |   |   |   |   ai(4111/6) - 1.72%/0.01%
+[04] |   |   |   |   mobBaseTick(4111/6) - 1.72%/0.01%
+[04] |   |   |   |   looting(4111/6) - 1.27%/0.00%
+[04] |   |   |   |   jump(4111/6) - 1.25%/0.00%
+[04] |   |   |   |   rangeChecks(4111/6) - 1.24%/0.00%
+[03] |   |   |   minecraft:player(210/0) - 7.94%/0.26%
+[04] |   |   |   |   #getEntities 630/0
+[04] |   |   |   |   unspecified(210/0) - 63.80%/0.17%
+[04] |   |   |   |   travel(210/0) - 19.00%/0.05%
+[05] |   |   |   |   |   rest(210/0) - 44.00%/0.02%
+[05] |   |   |   |   |   unspecified(210/0) - 39.59%/0.02%
+[05] |   |   |   |   |   move(210/0) - 16.41%/0.01%
+[06] |   |   |   |   |   |   #getEntities 210/0
+[04] |   |   |   |   push(210/0) - 6.10%/0.02%
+[05] |   |   |   |   |   #getEntities 210/0
+[04] |   |   |   |   entityBaseTick(210/0) - 3.87%/0.01%
+[04] |   |   |   |   ai(210/0) - 2.65%/0.01%
+[05] |   |   |   |   |   newAi(210/0) - 52.17%/0.00%
+[05] |   |   |   |   |   unspecified(210/0) - 47.83%/0.00%
+[04] |   |   |   |   livingEntityBaseTick(210/0) - 2.25%/0.01%
+[04] |   |   |   |   freezing(210/0) - 1.03%/0.00%
+[04] |   |   |   |   headTurn(210/0) - 0.90%/0.00%
+[04] |   |   |   |   jump(210/0) - 0.24%/0.00%
+[04] |   |   |   |   rangeChecks(210/0) - 0.15%/0.00%
+[03] |   |   |   minecraft:zombie(3360/5) - 7.90%/0.26%
+[04] |   |   |   |   unspecified(3360/5) - 46.09%/0.12%
+[04] |   |   |   |   entityBaseTick(3360/5) - 14.66%/0.04%
+[04] |   |   |   |   push(3360/5) - 12.82%/0.03%
+[05] |   |   |   |   |   #getEntities 3360/4
+[04] |   |   |   |   freezing(3360/5) - 7.39%/0.02%
+[04] |   |   |   |   livingEntityBaseTick(3360/5) - 6.14%/0.02%
+[04] |   |   |   |   travel(3360/5) - 3.09%/0.01%
+[04] |   |   |   |   headTurn(3360/5) - 2.26%/0.01%
+[04] |   |   |   |   mobBaseTick(3360/5) - 2.03%/0.01%
+[04] |   |   |   |   ai(3360/5) - 1.77%/0.00%
+[04] |   |   |   |   looting(3360/5) - 1.29%/0.00%
+[04] |   |   |   |   jump(3360/5) - 1.26%/0.00%
+[04] |   |   |   |   rangeChecks(3360/5) - 1.20%/0.00%
+[03] |   |   |   unspecified(210/0) - 7.46%/0.25%
+[03] |   |   |   minecraft:polar_bear(2310/3) - 6.30%/0.21%
+[04] |   |   |   |   unspecified(2310/3) - 41.36%/0.09%
+[04] |   |   |   |   entityBaseTick(2310/3) - 18.41%/0.04%
+[04] |   |   |   |   push(2310/3) - 14.04%/0.03%
+[05] |   |   |   |   |   #getEntities 2310/3
+[04] |   |   |   |   livingEntityBaseTick(2310/3) - 6.54%/0.01%
+[04] |   |   |   |   freezing(2310/3) - 6.35%/0.01%
+[04] |   |   |   |   travel(2310/3) - 3.40%/0.01%
+[04] |   |   |   |   headTurn(2310/3) - 2.62%/0.01%
+[04] |   |   |   |   ai(2310/3) - 1.91%/0.00%
+[04] |   |   |   |   mobBaseTick(2310/3) - 1.80%/0.00%
+[04] |   |   |   |   looting(2310/3) - 1.29%/0.00%
+[04] |   |   |   |   jump(2310/3) - 1.23%/0.00%
+[04] |   |   |   |   rangeChecks(2310/3) - 1.05%/0.00%
+[03] |   |   |   minecraft:squid(1470/2) - 6.27%/0.21%
+[04] |   |   |   |   travel(1470/2) - 32.26%/0.07%
+[05] |   |   |   |   |   rest(1470/2) - 55.36%/0.04%
+[05] |   |   |   |   |   move(1470/2) - 28.62%/0.02%
+[06] |   |   |   |   |   |   #getEntities 1470/2
+[05] |   |   |   |   |   unspecified(1470/2) - 16.02%/0.01%
+[04] |   |   |   |   unspecified(1470/2) - 28.03%/0.06%
+[04] |   |   |   |   entityBaseTick(1470/2) - 19.52%/0.04%
+[04] |   |   |   |   push(1470/2) - 7.06%/0.01%
+[05] |   |   |   |   |   #getEntities 1470/2
+[04] |   |   |   |   livingEntityBaseTick(1470/2) - 4.51%/0.01%
+[04] |   |   |   |   freezing(1470/2) - 2.85%/0.01%
+[04] |   |   |   |   headTurn(1470/2) - 1.50%/0.00%
+[04] |   |   |   |   mobBaseTick(1470/2) - 1.10%/0.00%
+[04] |   |   |   |   ai(1470/2) - 1.06%/0.00%
+[04] |   |   |   |   looting(1470/2) - 0.73%/0.00%
+[04] |   |   |   |   jump(1470/2) - 0.72%/0.00%
+[04] |   |   |   |   rangeChecks(1470/2) - 0.65%/0.00%
+[03] |   |   |   minecraft:item(2126/3) - 5.74%/0.19%
+[04] |   |   |   |   move(1330/2) - 45.54%/0.09%
+[05] |   |   |   |   |   #getEntities 1330/1
+[04] |   |   |   |   unspecified(2126/3) - 21.53%/0.04%
+[04] |   |   |   |   entityBaseTick(2126/3) - 16.96%/0.03%
+[04] |   |   |   |   rest(1330/2) - 15.97%/0.03%
+[03] |   |   |   minecraft:bat(2876/4) - 5.64%/0.19%
+[04] |   |   |   |   unspecified(2876/4) - 51.70%/0.10%
+[04] |   |   |   |   entityBaseTick(2876/4) - 18.53%/0.03%
+[04] |   |   |   |   livingEntityBaseTick(2876/4) - 7.16%/0.01%
+[04] |   |   |   |   freezing(2876/4) - 5.76%/0.01%
+[04] |   |   |   |   travel(2876/4) - 3.40%/0.01%
+[04] |   |   |   |   headTurn(2876/4) - 2.58%/0.00%
+[04] |   |   |   |   mobBaseTick(2876/4) - 2.42%/0.00%
+[04] |   |   |   |   ai(2876/4) - 2.01%/0.00%
+[04] |   |   |   |   push(2876/4) - 1.99%/0.00%
+[04] |   |   |   |   rangeChecks(2876/4) - 1.54%/0.00%
+[04] |   |   |   |   jump(2876/4) - 1.48%/0.00%
+[04] |   |   |   |   looting(2876/4) - 1.42%/0.00%
+[03] |   |   |   minecraft:glow_squid(1050/1) - 4.73%/0.16%
+[04] |   |   |   |   unspecified(1050/1) - 45.09%/0.07%
+[04] |   |   |   |   travel(1050/1) - 24.47%/0.04%
+[05] |   |   |   |   |   rest(1050/1) - 52.01%/0.02%
+[05] |   |   |   |   |   move(1050/1) - 29.46%/0.01%
+[06] |   |   |   |   |   |   #getEntities 1050/1
+[05] |   |   |   |   |   unspecified(1050/1) - 18.53%/0.01%
+[04] |   |   |   |   entityBaseTick(1050/1) - 11.90%/0.02%
+[04] |   |   |   |   push(1050/1) - 6.22%/0.01%
+[05] |   |   |   |   |   #getEntities 1050/1
+[04] |   |   |   |   livingEntityBaseTick(1050/1) - 3.70%/0.01%
+[04] |   |   |   |   freezing(1050/1) - 2.76%/0.00%
+[04] |   |   |   |   headTurn(1050/1) - 1.79%/0.00%
+[04] |   |   |   |   ai(1050/1) - 1.06%/0.00%
+[04] |   |   |   |   mobBaseTick(1050/1) - 0.94%/0.00%
+[04] |   |   |   |   looting(1050/1) - 0.73%/0.00%
+[04] |   |   |   |   jump(1050/1) - 0.68%/0.00%
+[04] |   |   |   |   rangeChecks(1050/1) - 0.66%/0.00%
+[03] |   |   |   minecraft:spider(1890/3) - 4.62%/0.15%
+[04] |   |   |   |   unspecified(1890/3) - 45.99%/0.07%
+[04] |   |   |   |   entityBaseTick(1890/3) - 17.08%/0.03%
+[04] |   |   |   |   push(1890/3) - 12.99%/0.02%
+[05] |   |   |   |   |   #getEntities 1890/2
+[04] |   |   |   |   livingEntityBaseTick(1890/3) - 6.03%/0.01%
+[04] |   |   |   |   freezing(1890/3) - 6.03%/0.01%
+[04] |   |   |   |   travel(1890/3) - 2.87%/0.00%
+[04] |   |   |   |   headTurn(1890/3) - 2.27%/0.00%
+[04] |   |   |   |   mobBaseTick(1890/3) - 1.66%/0.00%
+[04] |   |   |   |   ai(1890/3) - 1.65%/0.00%
+[04] |   |   |   |   rangeChecks(1890/3) - 1.15%/0.00%
+[04] |   |   |   |   looting(1890/3) - 1.14%/0.00%
+[04] |   |   |   |   jump(1890/3) - 1.14%/0.00%
+[03] |   |   |   minecraft:axolotl(1050/1) - 3.37%/0.11%
+[04] |   |   |   |   unspecified(1050/1) - 44.35%/0.05%
+[04] |   |   |   |   entityBaseTick(1050/1) - 19.01%/0.02%
+[04] |   |   |   |   push(1050/1) - 11.41%/0.01%
+[05] |   |   |   |   |   #getEntities 1050/1
+[04] |   |   |   |   livingEntityBaseTick(1050/1) - 7.94%/0.01%
+[04] |   |   |   |   travel(1050/1) - 4.43%/0.00%
+[04] |   |   |   |   freezing(1050/1) - 4.38%/0.00%
+[04] |   |   |   |   headTurn(1050/1) - 2.82%/0.00%
+[04] |   |   |   |   mobBaseTick(1050/1) - 1.45%/0.00%
+[04] |   |   |   |   ai(1050/1) - 1.37%/0.00%
+[04] |   |   |   |   looting(1050/1) - 0.98%/0.00%
+[04] |   |   |   |   jump(1050/1) - 0.94%/0.00%
+[04] |   |   |   |   rangeChecks(1050/1) - 0.92%/0.00%
+[03] |   |   |   minecraft:wolf(840/1) - 2.46%/0.08%
+[04] |   |   |   |   unspecified(840/1) - 48.04%/0.04%
+[04] |   |   |   |   push(840/1) - 14.26%/0.01%
+[05] |   |   |   |   |   #getEntities 840/1
+[04] |   |   |   |   entityBaseTick(840/1) - 11.54%/0.01%
+[04] |   |   |   |   freezing(840/1) - 8.97%/0.01%
+[04] |   |   |   |   livingEntityBaseTick(840/1) - 6.23%/0.01%
+[04] |   |   |   |   travel(840/1) - 2.76%/0.00%
+[04] |   |   |   |   headTurn(840/1) - 2.05%/0.00%
+[04] |   |   |   |   mobBaseTick(840/1) - 1.70%/0.00%
+[04] |   |   |   |   ai(840/1) - 1.56%/0.00%
+[04] |   |   |   |   jump(840/1) - 0.98%/0.00%
+[04] |   |   |   |   looting(840/1) - 0.96%/0.00%
+[04] |   |   |   |   rangeChecks(840/1) - 0.96%/0.00%
+[03] |   |   |   minecraft:fox(840/1) - 2.26%/0.08%
+[04] |   |   |   |   unspecified(840/1) - 51.95%/0.04%
+[04] |   |   |   |   entityBaseTick(840/1) - 11.57%/0.01%
+[04] |   |   |   |   push(840/1) - 10.64%/0.01%
+[05] |   |   |   |   |   #getEntities 840/1
+[04] |   |   |   |   freezing(840/1) - 6.32%/0.00%
+[04] |   |   |   |   livingEntityBaseTick(840/1) - 6.31%/0.00%
+[04] |   |   |   |   travel(840/1) - 3.09%/0.00%
+[04] |   |   |   |   ai(840/1) - 2.66%/0.00%
+[04] |   |   |   |   headTurn(840/1) - 2.29%/0.00%
+[04] |   |   |   |   mobBaseTick(840/1) - 1.96%/0.00%
+[04] |   |   |   |   jump(840/1) - 1.10%/0.00%
+[04] |   |   |   |   looting(840/1) - 1.08%/0.00%
+[04] |   |   |   |   rangeChecks(840/1) - 1.03%/0.00%
+[03] |   |   |   minecraft:sheep(420/1) - 1.23%/0.04%
+[04] |   |   |   |   unspecified(420/1) - 46.86%/0.02%
+[04] |   |   |   |   entityBaseTick(420/1) - 18.42%/0.01%
+[04] |   |   |   |   push(420/1) - 12.01%/0.00%
+[05] |   |   |   |   |   #getEntities 420/0
+[04] |   |   |   |   livingEntityBaseTick(420/1) - 5.98%/0.00%
+[04] |   |   |   |   freezing(420/1) - 5.82%/0.00%
+[04] |   |   |   |   travel(420/1) - 2.69%/0.00%
+[04] |   |   |   |   headTurn(420/1) - 2.21%/0.00%
+[04] |   |   |   |   ai(420/1) - 1.65%/0.00%
+[04] |   |   |   |   mobBaseTick(420/1) - 1.50%/0.00%
+[04] |   |   |   |   jump(420/1) - 1.01%/0.00%
+[04] |   |   |   |   looting(420/1) - 0.95%/0.00%
+[04] |   |   |   |   rangeChecks(420/1) - 0.92%/0.00%
+[03] |   |   |   minecraft:drowned(210/0) - 0.99%/0.03%
+[04] |   |   |   |   unspecified(210/0) - 40.60%/0.01%
+[04] |   |   |   |   entityBaseTick(210/0) - 28.92%/0.01%
+[04] |   |   |   |   push(210/0) - 7.92%/0.00%
+[05] |   |   |   |   |   #getEntities 210/0
+[04] |   |   |   |   freezing(210/0) - 5.87%/0.00%
+[04] |   |   |   |   travel(210/0) - 5.74%/0.00%
+[04] |   |   |   |   livingEntityBaseTick(210/0) - 5.07%/0.00%
+[04] |   |   |   |   headTurn(210/0) - 1.69%/0.00%
+[04] |   |   |   |   ai(210/0) - 1.20%/0.00%
+[04] |   |   |   |   mobBaseTick(210/0) - 1.16%/0.00%
+[04] |   |   |   |   jump(210/0) - 0.62%/0.00%
+[04] |   |   |   |   looting(210/0) - 0.60%/0.00%
+[04] |   |   |   |   rangeChecks(210/0) - 0.60%/0.00%
+[03] |   |   |   minecraft:witch(298/0) - 0.92%/0.03%
+[04] |   |   |   |   unspecified(298/0) - 51.35%/0.02%
+[04] |   |   |   |   entityBaseTick(298/0) - 13.49%/0.00%
+[04] |   |   |   |   push(298/0) - 12.12%/0.00%
+[05] |   |   |   |   |   #getEntities 298/0
+[04] |   |   |   |   livingEntityBaseTick(298/0) - 5.74%/0.00%
+[04] |   |   |   |   freezing(298/0) - 5.32%/0.00%
+[04] |   |   |   |   travel(298/0) - 3.29%/0.00%
+[04] |   |   |   |   headTurn(298/0) - 2.21%/0.00%
+[04] |   |   |   |   ai(298/0) - 1.84%/0.00%
+[04] |   |   |   |   mobBaseTick(298/0) - 1.48%/0.00%
+[04] |   |   |   |   rangeChecks(298/0) - 1.09%/0.00%
+[04] |   |   |   |   jump(298/0) - 1.08%/0.00%
+[04] |   |   |   |   looting(298/0) - 0.98%/0.00%
+[03] |   |   |   minecraft:cow(210/0) - 0.76%/0.03%
+[04] |   |   |   |   unspecified(210/0) - 50.79%/0.01%
+[04] |   |   |   |   entityBaseTick(210/0) - 13.92%/0.00%
+[04] |   |   |   |   push(210/0) - 12.09%/0.00%
+[05] |   |   |   |   |   #getEntities 210/0
+[04] |   |   |   |   freezing(210/0) - 6.53%/0.00%
+[04] |   |   |   |   livingEntityBaseTick(210/0) - 4.66%/0.00%
+[04] |   |   |   |   travel(210/0) - 3.91%/0.00%
+[04] |   |   |   |   headTurn(210/0) - 2.15%/0.00%
+[04] |   |   |   |   ai(210/0) - 1.86%/0.00%
+[04] |   |   |   |   mobBaseTick(210/0) - 1.63%/0.00%
+[04] |   |   |   |   looting(210/0) - 0.86%/0.00%
+[04] |   |   |   |   rangeChecks(210/0) - 0.82%/0.00%
+[04] |   |   |   |   jump(210/0) - 0.77%/0.00%
+[03] |   |   |   minecraft:slime(210/0) - 0.69%/0.02%
+[04] |   |   |   |   unspecified(210/0) - 52.30%/0.01%
+[04] |   |   |   |   entityBaseTick(210/0) - 16.45%/0.00%
+[04] |   |   |   |   push(210/0) - 11.43%/0.00%
+[05] |   |   |   |   |   #getEntities 210/0
+[04] |   |   |   |   livingEntityBaseTick(210/0) - 5.59%/0.00%
+[04] |   |   |   |   freezing(210/0) - 4.10%/0.00%
+[04] |   |   |   |   travel(210/0) - 2.90%/0.00%
+[04] |   |   |   |   headTurn(210/0) - 1.99%/0.00%
+[04] |   |   |   |   ai(210/0) - 1.53%/0.00%
+[04] |   |   |   |   mobBaseTick(210/0) - 1.13%/0.00%
+[04] |   |   |   |   jump(210/0) - 0.93%/0.00%
+[04] |   |   |   |   looting(210/0) - 0.84%/0.00%
+[04] |   |   |   |   rangeChecks(210/0) - 0.82%/0.00%
+[03] |   |   |   minecraft:rabbit(120/0) - 0.45%/0.01%
+[04] |   |   |   |   unspecified(120/0) - 54.74%/0.01%
+[04] |   |   |   |   push(120/0) - 10.16%/0.00%
+[05] |   |   |   |   |   #getEntities 120/0
+[04] |   |   |   |   entityBaseTick(120/0) - 9.82%/0.00%
+[04] |   |   |   |   livingEntityBaseTick(120/0) - 9.42%/0.00%
+[04] |   |   |   |   freezing(120/0) - 5.03%/0.00%
+[04] |   |   |   |   travel(120/0) - 3.09%/0.00%
+[04] |   |   |   |   headTurn(120/0) - 1.99%/0.00%
+[04] |   |   |   |   ai(120/0) - 1.75%/0.00%
+[04] |   |   |   |   mobBaseTick(120/0) - 1.15%/0.00%
+[04] |   |   |   |   rangeChecks(120/0) - 0.97%/0.00%
+[04] |   |   |   |   jump(120/0) - 0.96%/0.00%
+[04] |   |   |   |   looting(120/0) - 0.91%/0.00%
+[03] |   |   |   minecraft:chest_minecart(1260/2) - 0.32%/0.01%
+[02] |   |   blockEntities(210/0) - 3.26%/0.11%
+[03] |   |   |   unspecified(210/0) - 53.19%/0.06%
+[03] |   |   |   minecraft:mob_spawner(4718/7) - 24.42%/0.03%
+[03] |   |   |   minecraft:chest(5602/8) - 22.39%/0.03%
+[02] |   |   unspecified(210/0) - 1.85%/0.06%
+[02] |   |   blocks(210/0) - 0.03%/0.00%
+[01] |   animateTick(210/0) - 17.13%/0.88%
+[01] |   textures(210/0) - 10.13%/0.52%
+[01] |   particles(210/0) - 1.26%/0.06%
+[02] |   |   PARTICLE_SHEET_TRANSLUCENT(210/0) - 47.84%/0.03%
+[02] |   |   PARTICLE_SHEET_OPAQUE(210/0) - 27.84%/0.02%
+[02] |   |   unspecified(210/0) - 24.01%/0.02%
+[02] |   |   CUSTOM(82/0) - 0.31%/0.00%
+[01] |   pick(210/0) - 0.72%/0.04%
+[02] |   |   #getEntities 210/0
+[01] |   gameMode(210/0) - 0.68%/0.03%
+[01] |   gameRenderer(210/0) - 0.63%/0.03%
+[01] |   unspecified(724/1) - 0.44%/0.02%
+[01] |   gui(210/0) - 0.26%/0.01%
+[01] |   Keybindings(210/0) - 0.21%/0.01%
+[01] |   levelRenderer(210/0) - 0.05%/0.00%
+[01] |   keyboard(210/0) - 0.04%/0.00%
+[00] unspecified(724/1) - 2.28%/2.28%
+[00] blit(724/1) - 1.53%/1.53%
+[00] yield(724/1) - 0.80%/0.80%
+[00] scheduledExecutables(724/1) - 0.62%/0.62%
+[01] |   unspecified(724/1) - 95.72%/0.60%
+[01] |   queueCheckLight(6712/9) - 2.91%/0.02%
+[01] |   updateSkyLightSources(6712/9) - 1.37%/0.01%
+[00] render(724/1) - 0.17%/0.17%
+[01] |   unspecified(724/1) - 98.33%/0.16%
+[01] |   display(724/1) - 1.67%/0.00%
+[00] fpsUpdate(724/1) - 0.15%/0.15%
+[00] sound(724/1) - 0.04%/0.04%
+--- END PROFILE DUMP ---
+
+--- BEGIN COUNTER DUMP ---
+
+-- Counter: clientTick --
+[00] root total:0/210 average: 0/0
+[01] |   tick total:210/210 average: 0/0
+
+
+-- Counter: getEntities --
+[00] root total:0/33463 average: 0/46
+[01] |   tick total:0/32739 average: 0/45
+[02] |   |   level total:0/32529 average: 0/44
+[03] |   |   |   entities total:0/32529 average: 0/44
+[04] |   |   |   |   minecraft:skeleton total:0/4620 average: 0/6
+[05] |   |   |   |   |   push total:4620/4620 average: 6/6
+[04] |   |   |   |   minecraft:salmon total:0/4620 average: 0/6
+[05] |   |   |   |   |   push total:4620/4620 average: 6/6
+[04] |   |   |   |   minecraft:creeper total:0/4111 average: 0/5
+[05] |   |   |   |   |   push total:4111/4111 average: 5/5
+[04] |   |   |   |   minecraft:zombie total:0/3360 average: 0/4
+[05] |   |   |   |   |   push total:3360/3360 average: 4/4
+[04] |   |   |   |   minecraft:squid total:0/2940 average: 0/4
+[05] |   |   |   |   |   travel total:0/1470 average: 0/2
+[06] |   |   |   |   |   |   move total:1470/1470 average: 2/2
+[05] |   |   |   |   |   push total:1470/1470 average: 2/2
+[04] |   |   |   |   minecraft:polar_bear total:0/2310 average: 0/3
+[05] |   |   |   |   |   push total:2310/2310 average: 3/3
+[04] |   |   |   |   minecraft:glow_squid total:0/2100 average: 0/2
+[05] |   |   |   |   |   travel total:0/1050 average: 0/1
+[06] |   |   |   |   |   |   move total:1050/1050 average: 1/1
+[05] |   |   |   |   |   push total:1050/1050 average: 1/1
+[04] |   |   |   |   minecraft:spider total:0/1890 average: 0/2
+[05] |   |   |   |   |   push total:1890/1890 average: 2/2
+[04] |   |   |   |   minecraft:item total:0/1330 average: 0/1
+[05] |   |   |   |   |   move total:1330/1330 average: 1/1
+[04] |   |   |   |   minecraft:player total:630/1050 average: 0/1
+[05] |   |   |   |   |   travel total:0/210 average: 0/0
+[06] |   |   |   |   |   |   move total:210/210 average: 0/0
+[05] |   |   |   |   |   push total:210/210 average: 0/0
+[04] |   |   |   |   minecraft:axolotl total:0/1050 average: 0/1
+[05] |   |   |   |   |   push total:1050/1050 average: 1/1
+[04] |   |   |   |   minecraft:fox total:0/840 average: 0/1
+[05] |   |   |   |   |   push total:840/840 average: 1/1
+[04] |   |   |   |   minecraft:wolf total:0/840 average: 0/1
+[05] |   |   |   |   |   push total:840/840 average: 1/1
+[04] |   |   |   |   minecraft:sheep total:0/420 average: 0/0
+[05] |   |   |   |   |   push total:420/420 average: 0/0
+[04] |   |   |   |   minecraft:witch total:0/298 average: 0/0
+[05] |   |   |   |   |   push total:298/298 average: 0/0
+[04] |   |   |   |   minecraft:cow total:0/210 average: 0/0
+[05] |   |   |   |   |   push total:210/210 average: 0/0
+[04] |   |   |   |   minecraft:drowned total:0/210 average: 0/0
+[05] |   |   |   |   |   push total:210/210 average: 0/0
+[04] |   |   |   |   minecraft:slime total:0/210 average: 0/0
+[05] |   |   |   |   |   push total:210/210 average: 0/0
+[04] |   |   |   |   minecraft:rabbit total:0/120 average: 0/0
+[05] |   |   |   |   |   push total:120/120 average: 0/0
+[02] |   |   pick total:210/210 average: 0/0
+[01] |   gameRenderer total:0/724 average: 0/1
+[02] |   |   level total:0/724 average: 0/1
+[03] |   |   |   pick total:724/724 average: 1/1
+
+
+--- END COUNTER DUMP ---
+
